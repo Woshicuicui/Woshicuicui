@@ -12,18 +12,19 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.io.Serializable;
 import java.util.Date;
 
-@Data
+@Data //lom book注解
 @TableName("course_user")
 public class UserEntity extends Model<UserEntity> {
     /**
      * 用户id
      */
-    @TableId(value = "id",type= IdType.AUTO)
+    @TableId(value = "id",type= IdType.AUTO) //id 对应数据库表字段id
     private Long id;
     /**
      * 用户名
      */
-    private String username;
+    @TableField("username") //数据库表里的真实字段
+    private String user_name; //代码里用的
     /**
      * 密码
      */
@@ -31,7 +32,7 @@ public class UserEntity extends Model<UserEntity> {
     /**
      * 昵称
      */
-    @TableField("nike_name")
+    @TableField("nick_name")
      private String nikName;
     /**
      * 邮箱
