@@ -13,9 +13,11 @@ public class ResponseFactory {
         return response;
     }
 
+    public static <T>Response<T> getSuccess(){
+        return getResponse(ResponseCode.success.getCode(),ResponseCode.success.getMessage(),null);
+    }
 
     public static <T>Response<T> getSuccess(T data){
-
      return getResponse(ResponseCode.success.getCode(),ResponseCode.success.getMessage(),data);
     }
 
